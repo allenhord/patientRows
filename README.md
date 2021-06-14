@@ -1,2 +1,4 @@
-# patientRows
-Script that takes patient export data from OpenELIS and rearranges it for use in a log
+1. Save OpenELIS report as input.csv
+2. Paste accession numbers into assNumbers.csv
+3. Run .exe
+4. Desired fields should now be in output.csv
