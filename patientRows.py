@@ -71,13 +71,19 @@ with open(r'input.csv', mode='r') as csv_file:
                                         except:
                                                 print("Skipping empty cell")
                                         k+=1
-                                        
+				
+				#combine last and first name
+                                fullname = ""
+                                fullname = '' + rowlist[2] + ", " + rowlist[3] + ''
+                                rowlist[2] = fullname
+                                rowlist.pop(3)
+				
                                 #race handling, USA default country, remove "-" from zip codes
-                                rowlist[6] = raceSwitch(rowlist[6])
+                                rowlist[5] = raceSwitch(rowlist[5])
                                 if raceSwitch(rowlist[6]) == "Hispanic":
-                                        rowlist[7] = raceSwitch(rowlist[6])
-                                rowlist.pop(7)
-                                rowlist[8] = "USA"
+                                        rowlist[5] = raceSwitch(rowlist[6])
+                                rowlist.pop(6)
+                                rowlist[7] = "USA"
                                 rowlist[11] = rowlist[11].strip('-')
                                 rowlist[12] = rowlist[12][:-6]
                                 
